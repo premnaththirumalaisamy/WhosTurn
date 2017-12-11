@@ -45,6 +45,10 @@ public class AddMembersActivityTest {
         onView(withId(R.id.add_btn))
                 .perform(click());
 
+        onView(withText("Successfully added " + randomUser)).
+                inRoot(withDecorView(not(is(addMembersActivity.getActivity().getWindow().getDecorView())))).
+                check(matches(isDisplayed()));
+
         Intent intent = new Intent(addMembersActivity.getActivity(),Members.class);
         addMembersActivity.getActivity().startActivity(intent);
         onView(withText(randomUser)).check(matches(isDisplayed()));
