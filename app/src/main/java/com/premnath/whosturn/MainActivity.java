@@ -1,4 +1,4 @@
-package premnath.com.sampleandroidapp;
+package com.premnath.whosturn;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -29,8 +29,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Queue<String> livingRoomQueue = new ArrayDeque<>();
     Queue<String> queue;
 
-    // Load default data from members list
-    // Make it round robin
+    //TODO
+    // Move members data to FireBase.
+    // Support to skipp current turn.
+    // Fairly assign tasks.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

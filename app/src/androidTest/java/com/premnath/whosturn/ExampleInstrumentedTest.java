@@ -1,4 +1,4 @@
-package premnath.com.sampleandroidapp;
+package com.premnath.whosturn;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

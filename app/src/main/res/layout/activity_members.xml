@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="premnath.com.sampleandroidapp.Members">
+    tools:context="com.premnath.whosturn.Members">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

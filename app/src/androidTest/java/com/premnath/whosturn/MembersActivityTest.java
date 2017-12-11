@@ -1,4 +1,4 @@
-package premnath.com.sampleandroidapp;
+package com.premnath.whosturn;
 
 import static android.support.test.espresso.Espresso.*;
 import static android.support.test.espresso.assertion.ViewAssertions.*;

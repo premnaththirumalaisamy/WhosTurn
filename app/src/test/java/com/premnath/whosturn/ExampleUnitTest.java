@@ -1,4 +1,4 @@
-package premnath.com.sampleandroidapp;
+package com.premnath.whosturn;
 
 import org.junit.Test;
 
