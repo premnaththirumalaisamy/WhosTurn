@@ -2,4 +2,7 @@
     <string name="app_name">Who\'s Turn</string>
     <string name="dustbin">Dustbin</string>
     <string name="utensils">Utensils</string>
+    <string name="livingroom">Room</string>
+    <string name="bathroom">Bathroom</string>
+    <string name="members">Members</string>
 </resources>
