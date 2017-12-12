@@ -18,13 +18,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class MembersActivityTest {
+public class DisplayMembersActivityActivityTest {
 
     @Rule
-    public ActivityTestRule membersActivityTest = new ActivityTestRule(Members.class);
+    public ActivityTestRule membersActivityTest = new ActivityTestRule(DisplayMembersActivity.class);
 
     @Test
     public void verifyAddMembersButtonTextContent(){
-        onView(withText("Add Members")).check(matches(isDisplayed()));
+        onView(withText("Add DisplayMembersActivity")).check(matches(isDisplayed()));
     }
 }

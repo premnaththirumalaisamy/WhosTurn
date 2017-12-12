@@ -21,7 +21,7 @@ import static org.hamcrest.CoreMatchers.not;
  */
 
 @RunWith(AndroidJUnit4.class)
-public class AddMembersActivityTest {
+public class AddDisplayMembersActivityActivityTest {
 
     @Rule
     public ActivityTestRule addMembersActivity = new ActivityTestRule(AddMembersActivity.class);
@@ -48,7 +48,7 @@ public class AddMembersActivityTest {
                 inRoot(withDecorView(not(is(addMembersActivity.getActivity().getWindow().getDecorView())))).
                 check(matches(isDisplayed()));
 
-        Intent intent = new Intent(addMembersActivity.getActivity(),Members.class);
+        Intent intent = new Intent(addMembersActivity.getActivity(),DisplayMembersActivity.class);
         addMembersActivity.getActivity().startActivity(intent);
         onView(withText(randomUser)).check(matches(isDisplayed()));
     }

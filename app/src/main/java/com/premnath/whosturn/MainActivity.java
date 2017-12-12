@@ -14,12 +14,12 @@ import java.util.Queue;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button showMembers;
-    Button dustbin,utensils,bathRoom,livingRoom;
+    Button btn_display_members;
+    Button btn_dustbin, btn_utensils, btn_bathroom, btn_living_room;
 
     private static final String membersFile = "Users";
-    private static final String dustbinQueueFile = "dustbin";
-    private static final String utensilsQueueFile = "utensils";
+    private static final String dustbinQueueFile = "btn_dustbin";
+    private static final String utensilsQueueFile = "btn_utensils";
     private static final String bathRoomQueueFile = "bathroom";
     private static final String livingRoomQueueFile = "roomCleaning";
 
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Queue<String> utensilsQueue = new ArrayDeque<>();
     Queue<String> bathroomQueue = new ArrayDeque<>();
     Queue<String> livingRoomQueue = new ArrayDeque<>();
-    Queue<String> queue;
+    Queue<String> tempQueue;
 
     //TODO
     // Move members data to FireBase.
@@ -41,24 +41,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         init();
 
-        showMembers = (Button) findViewById(R.id.btn_members);
-        dustbin = (Button) findViewById(R.id.dustbin);
-        utensils = (Button) findViewById(R.id.utensils);
-        bathRoom = (Button) findViewById(R.id.bathroom);
-        livingRoom = (Button) findViewById(R.id.room);
+        btn_display_members = findViewById(R.id.btn_members);
+        btn_dustbin = findViewById(R.id.dustbin);
+        btn_utensils = findViewById(R.id.utensils);
+        btn_bathroom = findViewById(R.id.bathroom);
+        btn_living_room = findViewById(R.id.room);
 
-        showMembers.setOnClickListener(new View.OnClickListener() {
+        btn_display_members.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent listMembers = new Intent(MainActivity.this,Members.class);
+                Intent listMembers = new Intent(MainActivity.this,DisplayMembersActivity.class);
                 startActivity(listMembers);
             }
         });
 
-        dustbin.setOnClickListener(this);
-        utensils.setOnClickListener(this);
-        bathRoom.setOnClickListener(this);
-        livingRoom.setOnClickListener(this);
+        btn_dustbin.setOnClickListener(this);
+        btn_utensils.setOnClickListener(this);
+        btn_bathroom.setOnClickListener(this);
+        btn_living_room.setOnClickListener(this);
     }
 
     public void init(){
@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         q.addAll(members);
         return q;
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -120,19 +121,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.dustbin:
                 content = dustbinQueue.peek();
-                queue = dustbinQueue;
+                tempQueue = dustbinQueue;
                 break;
             case R.id.utensils:
                 content = utensilsQueue.peek();
-                queue=utensilsQueue;
+                tempQueue = utensilsQueue;
                 break;
             case R.id.bathroom:
                 content = bathroomQueue.peek();
-                queue=bathroomQueue;
+                tempQueue = bathroomQueue;
                 break;
             case R.id.room:
                 content = livingRoomQueue.peek();
-                queue=livingRoomQueue;
+                tempQueue = livingRoomQueue;
                 break;
         }
 
@@ -141,8 +142,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setMessage(content)
                 .setPositiveButton("Done", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                    String user = queue.remove();
-                    queue.add(user);
+                    String user = tempQueue.remove();
+                    tempQueue.add(user);
                 } })
                 .setNegativeButton("Not Yet", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {

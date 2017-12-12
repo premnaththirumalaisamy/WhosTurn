@@ -14,16 +14,17 @@ import java.io.OutputStreamWriter;
 
 public class AddMembersActivity extends AppCompatActivity {
 
-    Button addMember;
+    Button btn_add_member;
     EditText memberName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_members);
-        addMember = (Button)findViewById(R.id.add_btn);
-        memberName = (EditText)findViewById(R.id.member_name);
+        btn_add_member = findViewById(R.id.add_btn);
+        memberName = findViewById(R.id.member_name);
 
-        addMember.setOnClickListener(new View.OnClickListener() {
+        btn_add_member.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String member = memberName.getText().toString();

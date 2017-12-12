@@ -34,8 +34,6 @@ public class Utils {
             }
             inputStream.close();
             reader.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
