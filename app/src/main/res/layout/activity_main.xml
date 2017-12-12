@@ -31,13 +31,13 @@
             android:id="@+id/dustbin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DustBin" />
+            android:text="@string/dustbin" />
 
         <Button
             android:id="@+id/utensils"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Utensils" />
+            android:text="@string/utensils" />
 
         <Button
             android:id="@+id/bathroom"

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Who\'s Turn</string>
+    <string name="dustbin">Dustbin</string>
+    <string name="utensils">Utensils</string>
 </resources>

@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Queue<String> livingRoomQueue = new ArrayDeque<>();
     Queue<String> tempQueue;
 
+    static AlertDialog adb;
+
     //TODO
     // Move members data to FireBase.
     // Support to skipp current turn.
@@ -137,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
-        AlertDialog adb = new AlertDialog.Builder(MainActivity.this)
+        adb = new AlertDialog.Builder(MainActivity.this)
                 .setTitle("Who's Turn")
                 .setMessage(content)
                 .setPositiveButton("Done", new DialogInterface.OnClickListener() {
@@ -149,5 +151,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onClick(DialogInterface dialog, int which) {
                 } })
                 .show();
+    }
+
+    public static AlertDialog getLastDialog(){
+        return adb;
     }
 }
